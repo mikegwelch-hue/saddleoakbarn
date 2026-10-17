@@ -1,0 +1,415 @@
+<title>Saddle Oak Barn</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Saddle Oak Barn at Hall Place — a family-built 1950s barn wedding and event venue in Yorkville, West Tennessee, with on-site lodging included in every wedding weekend.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Mulish:wght@400;600;700&display=swap">
+<style>
+/* Layout: full-width banded sections, each a "chapter" of the wedding weekend; content capped at 1120px */
+:root{
+  --bg:#F2F3EE;        /* morning-field neutral, faint green bias */
+  --surface:#FFFFFF;
+  --ink:#232A22;       /* deep pine */
+  --muted:#5F675C;
+  --line:#D6D9CF;
+  --forest:#33402F;    /* oak-leaf green bands */
+  --on-forest:#EEF0E8;
+  --hay:#B8892F;       /* hay-bale gold accent */
+  --hay-soft:#F1E6CC;
+  --ph:#E3E6DC;        /* photo placeholder */
+  --ph-ink:#7A8275;
+  --display:"Gloock", Georgia, "Times New Roman", serif;
+  --body:"Mulish", "Segoe UI", system-ui, sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#161A15;--surface:#1F241E;--ink:#E7EAE1;--muted:#A3AB9E;--line:#343B32;
+  --forest:#0F130E;--on-forest:#E7EAE1;--hay:#D9AC52;--hay-soft:#3A3220;--ph:#2A3028;--ph-ink:#8C9487;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#161A15;--surface:#1F241E;--ink:#E7EAE1;--muted:#A3AB9E;--line:#343B32;
+  --forest:#0F130E;--on-forest:#E7EAE1;--hay:#D9AC52;--hay-soft:#3A3220;--ph:#2A3028;--ph-ink:#8C9487;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--forest)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;text-wrap:balance;margin:0}
+h2{font-size:clamp(2rem,4.5vw,3rem)}
+h3{font-size:1.45rem}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--hay);outline-offset:3px}
+.eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--hay)}
+.lead{font-size:1.15rem;color:var(--muted);max-width:62ch}
+section{padding-block:clamp(56px,9vw,104px)}
+.stack{display:flex;flex-direction:column;gap:16px}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--forest);color:var(--on-forest)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{font-family:var(--display);font-size:1.35rem;text-decoration:none;line-height:1}
+.brand small{display:block;font-family:var(--body);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;opacity:.75;margin-top:4px}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;font-weight:600;font-size:.92rem}
+nav a:hover{color:var(--hay)}
+.btn{display:inline-block;background:var(--hay);color:#1E1A10;font-weight:700;text-decoration:none;padding:12px 22px;border-radius:3px;border:0;font-family:var(--body);font-size:1rem;cursor:pointer}
+.btn:hover{filter:brightness(1.06)}
+.btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.menu-btn{display:none;background:none;border:0;color:inherit;font:inherit;font-weight:700;cursor:pointer;padding:8px}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:var(--forest);flex-direction:column;align-items:flex-start;gap:4px;
+    padding:8px max(16px,env(safe-area-inset-right,0px)) 20px max(16px,env(safe-area-inset-left,0px))}
+  nav ul.open{display:flex}
+  nav li{width:100%}
+  nav a{display:block;padding:10px 0;font-size:1.05rem}
+}
+
+/* photo placeholders: swap each .ph for <img src="images/..."> */
+.ph{background:var(--ph);color:var(--ph-ink);display:flex;align-items:flex-end;padding:12px 14px;font-size:.8rem;font-weight:600;letter-spacing:.04em;
+  background-image:repeating-linear-gradient(90deg,transparent 0 22px,color-mix(in srgb,var(--ph-ink) 9%,transparent) 22px 23px);
+  aspect-ratio:4/3;max-width:100%;width:100%;border-radius:2px}
+.ph::before{content:"Photo · ";opacity:.7}
+
+/* hero */
+.hero{background:var(--forest);color:var(--on-forest);padding-block:clamp(40px,7vw,80px) 0}
+.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,64px);align-items:end}
+.hero h1{font-size:clamp(2.6rem,6.5vw,4.6rem)}
+.hero .lead{color:color-mix(in srgb,var(--on-forest) 78%,transparent)}
+.hero-copy{display:flex;flex-direction:column;gap:22px;padding-bottom:clamp(32px,5vw,64px)}
+.hero .ph{aspect-ratio:4/5;background-color:color-mix(in srgb,var(--on-forest) 12%,var(--forest));color:color-mix(in srgb,var(--on-forest) 65%,transparent)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.ribbon{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:.88rem;font-weight:600;opacity:.9}
+.ribbon span::before{content:"— ";color:var(--hay)}
+@media (max-width:760px){.hero-grid{grid-template-columns:1fr}.hero .ph{aspect-ratio:16/10}.hero-copy{padding-bottom:0}.hero-grid{padding-bottom:0}}
+
+/* facts strip */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line)}
+.fact{padding:22px 18px;border-left:1px solid var(--line);min-width:0}
+.fact:first-child{border-left:0}
+.fact b{display:block;font-family:var(--display);font-weight:400;font-size:1.9rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.fact span{font-size:.88rem;color:var(--muted)}
+@media (max-width:700px){.facts{grid-template-columns:repeat(2,1fr)}.fact:nth-child(3){border-left:0}.fact:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* two-col */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.split>*{min-width:0}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+.ceremony{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 28px;margin-top:8px}
+.ceremony h3{font-size:1.15rem;margin-bottom:4px}
+.ceremony p{font-size:.95rem;color:var(--muted)}
+@media (max-width:480px){.ceremony{grid-template-columns:1fr}}
+
+/* pricing */
+.price-wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:start;margin-top:36px}
+.price-wrap>*{min-width:0}
+@media (max-width:860px){.price-wrap{grid-template-columns:1fr}}
+.package{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--hay);padding:clamp(22px,4vw,40px);display:flex;flex-direction:column;gap:20px}
+.amount{font-family:var(--display);font-size:clamp(3rem,7vw,4.4rem);line-height:1;font-variant-numeric:tabular-nums}
+.amount sup{font-size:.45em;vertical-align:.9em;margin-right:2px}
+.checks{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.checks li{padding-left:28px;position:relative}
+.checks li::before{content:"";position:absolute;left:2px;top:.5em;width:12px;height:7px;border-left:2px solid var(--hay);border-bottom:2px solid var(--hay);transform:rotate(-45deg)}
+.checks small{display:block;color:var(--muted);font-size:.88rem}
+.addons{display:flex;flex-direction:column;gap:14px}
+.addon{border-bottom:1px solid var(--line);padding-bottom:14px}
+.addon h3{font-family:var(--body);font-weight:700;font-size:1.02rem}
+.addon p{font-size:.93rem;color:var(--muted)}
+.note{background:var(--hay-soft);padding:14px 16px;font-size:.92rem;border-radius:2px}
+
+/* weekend timeline */
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;position:relative}
+.day{padding:0 24px 0 0;position:relative;min-width:0}
+.day::before{content:"";display:block;height:2px;background:var(--hay);margin-bottom:18px}
+.day::after{content:"";position:absolute;top:-5px;left:0;width:12px;height:12px;border-radius:50%;background:var(--hay)}
+.day h3{margin-bottom:8px}
+.day .when{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:6px}
+.day ul{margin:0;padding-left:18px;color:var(--muted);font-size:.95rem}
+@media (max-width:700px){.timeline{grid-template-columns:1fr;gap:28px}}
+
+/* lodging */
+.lodging{background:var(--surface);border-block:1px solid var(--line)}
+.stat-line{display:flex;flex-wrap:wrap;gap:6px 0;font-weight:700;font-size:1rem}
+.stat-line span{padding:0 14px;border-left:1px solid var(--line)}
+.stat-line span:first-child{padding-left:0;border-left:0}
+.mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-top:36px}
+.mosaic .ph:first-child{grid-row:span 2;aspect-ratio:auto;min-height:100%}
+@media (max-width:700px){.mosaic{grid-template-columns:1fr 1fr}.mosaic .ph:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:16/10}}
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px}
+.rooms>div{min-width:0;display:flex;flex-direction:column;gap:8px}
+.rooms p{color:var(--muted);font-size:.97rem}
+@media (max-width:860px){.rooms{grid-template-columns:1fr}}
+
+/* rentals */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:8px 16px;font:600 .9rem var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:26px 20px;margin-top:28px}
+.item{display:flex;flex-direction:column;gap:10px;min-width:0}
+.item .cat{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--hay)}
+.item h3{font-size:1.25rem}
+.item p{font-size:.93rem;color:var(--muted)}
+.qty{font-size:.85rem;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* contact */
+.contact{background:var(--forest);color:var(--on-forest)}
+.contact .lead{color:color-mix(in srgb,var(--on-forest) 78%,transparent)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form .full{grid-column:1/-1}
+label{display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:700;letter-spacing:.03em}
+input,select,textarea{font:inherit;font-weight:400;font-size:1rem;padding:12px;border-radius:3px;border:1px solid color-mix(in srgb,var(--on-forest) 30%,transparent);background:color-mix(in srgb,var(--on-forest) 8%,transparent);color:var(--on-forest);width:100%}
+select option{color:#232A22}
+textarea{min-height:110px;resize:vertical}
+@media (max-width:520px){form{grid-template-columns:1fr}}
+.info{display:flex;flex-direction:column;gap:22px}
+.info b{display:block;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--hay)}
+.info .big{font-family:var(--display);font-size:1.7rem}
+#formMsg{font-size:.92rem}
+footer{background:var(--forest);color:color-mix(in srgb,var(--on-forest) 70%,transparent);font-size:.85rem;border-top:1px solid color-mix(in srgb,var(--on-forest) 15%,transparent)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:24px}
+</style>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">Saddle Oak Barn<small>at Hall Place</small></a>
+    <nav aria-label="Main">
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navList">Menu</button>
+      <ul id="navList">
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#lodging">Lodging</a></li>
+        <li><a href="#rentals">Rentals</a></li>
+        <li><a href="#contact" class="btn">Schedule a Tour</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Weddings &amp; events · Yorkville, West Tennessee</p>
+      <h1>A family-built 1950s barn, your whole weekend, and a house to stay in.</h1>
+      <p class="lead">Saddle Oak Barn blends rustic charm with modern comfort: café lights, vintage architecture, updated restrooms and kitchen, and four acres of ceremony settings. Every wedding weekend includes on-site lodging.</p>
+      <div class="cta-row">
+        <a class="btn" href="#contact">Schedule a Tour</a>
+        <a class="btn ghost" href="#pricing">See Pricing</a>
+      </div>
+      <div class="ribbon"><span>Now booking 2027</span><span>Lodging included</span><span>Friday through Sunday</span></div>
+    </div>
+    <div class="ph">Barn at dusk with café lights</div>
+  </div>
+</section>
+
+<!-- FACTS -->
+<div class="wrap">
+  <div class="facts">
+    <div class="fact"><b>175</b><span>guests seated, chairs &amp; tables included</span></div>
+    <div class="fact"><b>3,500 sq ft</b><span>indoor barn space</span></div>
+    <div class="fact"><b>4 acres</b><span>with five ceremony settings</span></div>
+    <div class="fact"><b>Sleeps 8</b><span>in the on-site house</span></div>
+  </div>
+</div>
+
+<!-- VENUE -->
+<section id="venue">
+  <div class="wrap split">
+    <div class="stack">
+      <p class="eyebrow">The venue</p>
+      <h2>Say your vows wherever it feels right.</h2>
+      <p class="lead">Every corner of the property can host your ceremony, from the grain bins to the woods. If the weather turns, the barn's 3,500 sq ft interior is ready.</p>
+      <div class="ceremony">
+        <div><h3>Grain Bin Backdrop</h3><p>Gracefully aged grain bins with real rustic character.</p></div>
+        <div><h3>Lush Lawn</h3><p>Open fields and crops stretching out behind you.</p></div>
+        <div><h3>Tree-Lined Courtyard</h3><p>7,000 sq ft under the trees, with an intimate arbor.</p></div>
+        <div><h3>The Woods</h3><p>Our newest setting: whimsical and wooded.</p></div>
+      </div>
+    </div>
+    <div class="ph">Ceremony at the grain bins</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="padding-top:0">
+  <div class="wrap">
+    <div class="stack">
+      <p class="eyebrow">Pricing</p>
+      <h2>One package. The whole weekend.</h2>
+      <p class="lead">Lodging, seating, and three days on the property, all in one price. Add the extras that fit your day.</p>
+    </div>
+    <div class="price-wrap">
+      <div class="package">
+        <div>
+          <p class="eyebrow" style="color:var(--muted)">Wedding Weekend Package</p>
+          <div class="amount"><sup>$</sup>3,350</div>
+        </div>
+        <ul class="checks">
+          <li>Barn and grounds, Friday 7 am through Sunday noon<small>Time to decorate, rehearse, and clean up without rushing</small></li>
+          <li>On-site house, Friday through Sunday 10 am<small>3 bedrooms, 3 baths, up to 8 guests</small></li>
+          <li>Bridal suite with two styling stations</li>
+          <li>Groom's quarters with lounge, game room, and shower</li>
+          <li>Seating for 175 guests<small>175 wooden chairs · 15 60" round tables · 8 farmhouse tables (four 6 ft, four 8 ft)</small></li>
+          <li>Serving tables for food, cake, and gifts</li>
+          <li>5 propane heaters for cool evenings</li>
+        </ul>
+        <a class="btn" href="#contact" style="align-self:flex-start">Check Your Date</a>
+      </div>
+      <div class="addons">
+        <h3>Add-Ons</h3>
+        <div class="addon"><h3>Day-of Coordination</h3><p>We contact your vendors, build the timeline with your photographer, run the rehearsal, and manage the move from ceremony to reception.</p></div>
+        <div class="addon"><h3>Setup</h3><p>We set up the barn and grounds to your plan, so you can focus on Friday's rehearsal.</p></div>
+        <div class="addon"><h3>Cleanup</h3><p>We handle teardown and cleanup, so your Sunday is a slow morning.</p></div>
+        <div class="addon"><h3>Draping</h3><p>Soft fabric draping to transform the barn's interior.</p></div>
+        <div class="addon"><h3>Additional Chairs &amp; Tables</h3><p>For guest lists over 175.</p></div>
+        <p class="note">Add-on pricing depends on your guest count and plans. <a href="#contact">Ask us for a quote.</a></p>
+      </div>
+    </div>
+
+    <div class="timeline" aria-label="Your wedding weekend">
+      <div class="day"><p class="when">Friday · from 7 am</p><h3>Set up &amp; rehearse</h3><ul><li>Decorate the barn</li><li>Rehearsal and dinner</li><li>First night in the house</li></ul></div>
+      <div class="day"><p class="when">Saturday</p><h3>The wedding</h3><ul><li>Get ready in the bridal suite and groom's quarters</li><li>Ceremony and reception</li></ul></div>
+      <div class="day"><p class="when">Sunday</p><h3>Slow morning</h3><ul><li>House check-out at 10 am</li><li>Barn cleanup until noon</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- LODGING -->
+<section id="lodging" class="lodging">
+  <div class="wrap">
+    <div class="split" style="align-items:end">
+      <div class="stack">
+        <p class="eyebrow">Lodging · Included</p>
+        <h2>Stay where it all happens.</h2>
+      </div>
+      <div class="stack">
+        <p class="lead">The house sits a short walk across the property from the barn, close enough to be easy and far enough for some privacy. It's yours from Friday through Sunday morning.</p>
+        <div class="stat-line"><span>3 Bedrooms</span><span>3 Bathrooms</span><span>Beds for 6</span><span>Up to 8 guests</span></div>
+      </div>
+    </div>
+    <div class="mosaic">
+      <div class="ph">House exterior</div>
+      <div class="ph">Bridal suite</div>
+      <div class="ph">Sunroom</div>
+      <div class="ph">King bedroom</div>
+      <div class="ph">Groom's quarters game room</div>
+    </div>
+    <div class="rooms">
+      <div><h3>The Bridal Suite</h3><p>A spacious getting-ready room with two styling stations, great natural light, and mirrors throughout. Your hair and makeup team, bridesmaids, and photographer all fit comfortably.</p></div>
+      <div><h3>Bedrooms &amp; Sunroom</h3><p>Two king suites and a queen room, each with its own bathroom. Additional guests are welcome on the sofas, up to 8 total. The large sunroom is a bright spot for morning coffee and getting-ready photos.</p></div>
+      <div><h3>Groom's Quarters</h3><p>A space of their own: a lounge to get ready in, a game room with a pool table to pass the time, and a full bathroom with a shower.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RENTALS -->
+<section id="rentals">
+  <div class="wrap">
+    <div class="stack">
+      <p class="eyebrow">Decor Rentals</p>
+      <h2>Vintage pieces, already here.</h2>
+      <p class="lead">Rent from our collection and skip the pickup and return. Not everything is listed, so if you're looking for something, just ask.</p>
+    </div>
+    <div class="chips" role="group" aria-label="Filter rentals">
+      <button class="chip" aria-pressed="true" data-f="all">All</button>
+      <button class="chip" aria-pressed="false" data-f="seating">Seating &amp; Furniture</button>
+      <button class="chip" aria-pressed="false" data-f="table">Tablescapes</button>
+      <button class="chip" aria-pressed="false" data-f="center">Centerpieces &amp; Florals</button>
+      <button class="chip" aria-pressed="false" data-f="accent">Backdrops &amp; Accents</button>
+    </div>
+    <div class="grid" id="rentalGrid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap split" style="align-items:start">
+    <div class="stack">
+      <p class="eyebrow">Schedule a tour</p>
+      <h2>Come see the barn in person.</h2>
+      <p class="lead">Tell us your date and guest count, and we'll set up a time to walk the property with you.</p>
+      <div class="info" style="margin-top:12px">
+        <div><b>Phone / Text</b><a class="big" href="tel:7316971080" style="text-decoration:none">731-697-1080</a></div>
+        <div><b>Location</b><span>Yorkville, Tennessee</span></div>
+        <div><b>Mailing address &amp; GPS</b><span>3 Raymond Baker Rd<br>Dyer, TN 38330</span></div>
+        <div><b>Follow</b><span><a href="https://www.facebook.com/saddleoakbarn/">Facebook</a> · <a href="https://www.instagram.com/saddleoakbarn/">Instagram</a></span></div>
+      </div>
+    </div>
+    <!-- On GitHub: replace action with your Formspree endpoint, e.g. https://formspree.io/f/xxxxxx, and method="POST" -->
+    <form id="tourForm" novalidate>
+      <label>Name<input id="f-name" name="name" required autocomplete="name"></label>
+      <label>Phone<input id="f-phone" name="phone" type="tel" autocomplete="tel"></label>
+      <label class="full">Email<input id="f-email" name="email" type="email" required autocomplete="email"></label>
+      <label>Event date<input id="f-date" name="date" type="date"></label>
+      <label>Guest count<input id="f-guests" name="guests" type="number" min="1" inputmode="numeric"></label>
+      <label class="full">Interested in
+        <select id="f-type" name="type"><option>Wedding Weekend Package</option><option>Other event</option><option>Decor rentals</option><option>Just a tour</option></select>
+      </label>
+      <label class="full">Message<textarea id="f-msg" name="message" placeholder="Add-ons you're considering, questions, anything else"></textarea></label>
+      <div class="full" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+        <button class="btn" type="submit">Send Request</button>
+        <p id="formMsg" role="status"></p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Saddle Oak Barn at Hall Place</span><span>Yorkville, TN · 3 Raymond Baker Rd, Dyer, TN 38330 · 731-697-1080</span></div></footer>
+
+<script>
+// Rental items: edit this list to add, remove, or describe pieces.
+const rentals = [
+  {c:"seating", n:"Refurbished Church Pews", d:"Restored wooden pews for ceremony seating or a cozy lounge corner.", q:""},
+  {c:"seating", n:"Vintage Sofas", d:"Statement sofas for a lounge area or the sweetheart spot.", q:""},
+  {c:"seating", n:"Vintage Furniture", d:"Side tables, dressers, and accent pieces to dress a space.", q:""},
+  {c:"seating", n:"Additional Chairs", d:"Extra seating for guest lists over 175.", q:""},
+  {c:"seating", n:"Dining Tables", d:"Additional tables for larger receptions.", q:""},
+  {c:"seating", n:"Bar", d:"A ready-made bar setup for drinks service.", q:""},
+  {c:"table", n:"Mixed-Pattern Fine China", d:"Collected vintage plates in mismatched patterns.", q:""},
+  {c:"table", n:"Vintage Colored Stemware", d:"Jewel-toned glassware that catches the café lights.", q:""},
+  {c:"table", n:"Velvet Table Runners", d:"Rich runners for farmhouse and round tables.", q:""},
+  {c:"table", n:"Candlesticks", d:"Brass and glass candlesticks for long tablescapes.", q:""},
+  {c:"table", n:"Glass Bottles", d:"Assorted bottles for single stems or bud vases.", q:""},
+  {c:"center", n:"Geometric Centerpieces", d:"Modern metal forms that pair with greenery or candles.", q:""},
+  {c:"center", n:"Wooden Centerpiece Boxes", d:"Rustic boxes for florals, candles, or table numbers.", q:""},
+  {c:"center", n:"Woven Baskets", d:"Natural baskets for florals, programs, or favors.", q:""},
+  {c:"center", n:"Florals", d:"Arrangements to fill out your centerpieces and arches.", q:""},
+  {c:"center", n:"Fern Stands", d:"Tall stands to frame an aisle or entrance.", q:""},
+  {c:"accent", n:"Chandeliers", d:"Hanging chandeliers for over the dance floor or head table.", q:""},
+  {c:"accent", n:"Ivy Panels", d:"Greenery walls for a photo backdrop or ceremony.", q:""},
+  {c:"accent", n:"Vintage Window Frames", d:"Seating charts, signage, or a hanging backdrop.", q:""},
+  {c:"accent", n:"Oriental Rugs", d:"Layered rugs for a lounge, altar, or sweetheart table.", q:""}
+];
+const labels = {seating:"Seating & Furniture", table:"Tablescapes", center:"Centerpieces & Florals", accent:"Backdrops & Accents"};
+const grid = document.getElementById("rentalGrid");
+function render(f){
+  grid.innerHTML = "";
+  rentals.filter(r => f==="all" || r.c===f).forEach(r => {
+    const el = document.createElement("article");
+    el.className = "item";
+    el.innerHTML = `<div class="ph">${r.n}</div><span class="cat">${labels[r.c]}</span><h3>${r.n}</h3><p>${r.d}</p>${r.q?`<span class="qty">${r.q}</span>`:""}`;
+    grid.appendChild(el);
+  });
+}
+render("all");
+document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed","false"));
+  b.setAttribute("aria-pressed","true");
+  render(b.dataset.f);
+}));
+
+const menuBtn = document.getElementById("menuBtn"), navList = document.getElementById("navList");
+menuBtn.addEventListener("click", () => { const o = navList.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", o); });
+navList.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { navList.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false"); }));
+
+document.getElementById("tourForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const msg = document.getElementById("formMsg");
+  const name = document.getElementById("f-name").value.trim(), email = document.getElementById("f-email").value.trim();
+  if(!name || !email){ msg.textContent = "Please add your name and email so we can reply."; return; }
+  msg.textContent = "Preview only: this form will send to your inbox once it's connected to Formspree.";
+});
+</script>
